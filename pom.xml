@@ -8,6 +8,8 @@
 	<name>cassandraTest</name>
 	<url>http://maven.apache.org</url>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.8</jdk.version>
 		<junitVersion>4.12</junitVersion>
 		<datastax.version>2.1.3</datastax.version>
 		<slf4jVersion>1.7.12</slf4jVersion>
@@ -31,4 +33,19 @@
 			<exclusions></exclusions>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!-- Cf. http://maven.apache.org/plugins/maven-war-plugin/examples/adding-filtering-webresources.html -->
+	</build>
 </project>
