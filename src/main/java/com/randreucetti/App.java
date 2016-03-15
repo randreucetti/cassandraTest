@@ -9,5 +9,8 @@ public class App {
 				.addContactPoints("127.0.0.1", "127.0.0.2", "127.0.0.3")
 				.build();
 		Session session = cluster.connect("test");
+		while (true) {
+
+		}
 	}
 }

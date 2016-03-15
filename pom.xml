@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 		<junitVersion>4.12</junitVersion>
-		<datastax.version>2.1.3</datastax.version>
+		<datastax.version>2.1.9</datastax.version>
 		<slf4jVersion>1.7.12</slf4jVersion>
 	</properties>
 	<dependencies>
