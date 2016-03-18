@@ -12,9 +12,10 @@ public class App {
 	public final static Logger log = LoggerFactory.getLogger(App.class);
 
 	public static void main(String[] args) throws InterruptedException {
-		Cluster cluster = Cluster.builder()
-				.addContactPoints("127.0.0.1", "127.0.0.2", "127.0.0.3")
-				.build();
+		Cluster cluster = Cluster
+				.builder()
+				.addContactPoints("127.0.0.1", "127.0.0.2", "127.0.0.3",
+						"127.0.0.4", "127.0.0.5").build();
 		Session session = cluster.connect("test");
 		while (true) {
 			Thread.sleep(5000);
