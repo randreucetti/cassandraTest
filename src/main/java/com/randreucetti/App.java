@@ -1,11 +1,8 @@
 package com.randreucetti;
 
 import java.math.BigInteger;
-import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.security.SecureRandom;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 import org.slf4j.Logger;
@@ -22,14 +19,10 @@ public class App {
 
 	public static void main(String[] args) throws InterruptedException,
 			UnknownHostException {
-		InetSocketAddress n1 = new InetSocketAddress("192.168.1.184", 15001);
-		InetSocketAddress n2 = new InetSocketAddress("192.168.1.184", 15002);
-		InetSocketAddress n3 = new InetSocketAddress("192.168.1.184", 15003);
-		InetSocketAddress n4 = new InetSocketAddress("192.168.1.184", 15004);
-		InetSocketAddress n5 = new InetSocketAddress("192.168.1.184", 15005);
-		List<InetSocketAddress> addresses = Arrays.asList(n1, n2, n3, n4, n5);
-		Cluster cluster = Cluster.builder()
-				.addContactPointsWithPorts(addresses).build();
+		Cluster cluster = Cluster
+				.builder()
+				.addContactPoints("127.0.0.1", "127.0.0.2", "127.0.0.3",
+						"127.0.0.4", "127.0.0.5").build();
 		Session session = cluster.connect("test");
 
 		PreparedStatement statement = session
