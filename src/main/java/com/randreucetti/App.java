@@ -33,7 +33,7 @@ public class App {
 		Session session = cluster.connect("test");
 
 		PreparedStatement statement = session
-				.prepare("INSERT INTO emp (emp_id, emp_city, emp_name, emp_phone, emp_sal VALUES (?, ?, ?, ?, ?)");
+				.prepare("INSERT INTO emp (emp_id, emp_city, emp_name, emp_phone, emp_sal) VALUES (?, ?, ?, ?, ?)");
 		Random r = new Random();
 		SessionIdentifierGenerator stringGenerator = new SessionIdentifierGenerator();
 		while (true) {
